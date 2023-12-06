@@ -1,8 +1,8 @@
 import { useLoaderData } from "react-router-dom";
 import {
   getProfiles,
-  GetProfilesProps,
-} from "../../../services/dashboard-profiles.api";
+  ProfilesProps,
+} from "../../services/dashboard-profiles.api";
 import { LinkSC } from "./Profiles.styled";
 
 export const loader = () => {
@@ -10,7 +10,7 @@ export const loader = () => {
 };
 
 function Profiles() {
-  const data = useLoaderData() as GetProfilesProps[];
+  const data = useLoaderData() as ProfilesProps[];
   console.log(data);
   return (
     <>

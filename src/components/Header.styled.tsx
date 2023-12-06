@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device } from "../../styles/BreakPoints";
+import { device } from "../styles/BreakPoints";
 import { NavLink } from "react-router-dom";
 
 export const HeaderS = styled.header`

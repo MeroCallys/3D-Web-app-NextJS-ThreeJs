@@ -14,7 +14,7 @@ import {
 } from "./Header.styled";
 import { useState } from "react";
 
-function Header() {
+export default function Header() {
   const [isCollapsed, setCollapsed] = useState(false);
 
   const handleClick = () => {
@@ -47,5 +47,3 @@ function Header() {
     </HeaderS>
   );
 }
-
-export default Header;

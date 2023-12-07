@@ -41,7 +41,7 @@ export default function Sidebar() {
         <Styled.Ul>
           <Styled.ListItem>
             <Styled.DashboardContainer onClick={clickHandler} id="dashboard">
-              <Styled.Title to=".">
+              <Styled.Title to="#">
                 <Styled.DashboardDivider>
                   <MdSpaceDashboard />
                   Dashboard
@@ -63,17 +63,14 @@ export default function Sidebar() {
                   <Styled.Subtitle to=".">Overview</Styled.Subtitle>
                 </Styled.ListWrapper>
                 <Styled.ListWrapper>
-                  <Styled.Subtitle to=".">Whatever</Styled.Subtitle>
-                </Styled.ListWrapper>
-                <Styled.ListWrapper>
-                  <Styled.Subtitle to=".">Whatever</Styled.Subtitle>
+                  <Styled.Subtitle to="analytics">Analytics</Styled.Subtitle>
                 </Styled.ListWrapper>
               </Styled.ListContainer>
             </Styled.CollapsibleDashboard>
           </Styled.ListItem>
           <Styled.ListItem>
             <Styled.DashboardContainer onClick={clickHandler} id="customer">
-              <Styled.Title to=".">
+              <Styled.Title to="#">
                 <Styled.DashboardDivider>
                   <RiProfileFill />
                   Customer
@@ -95,17 +92,17 @@ export default function Sidebar() {
                   <Styled.Subtitle to="profiles">Profiles</Styled.Subtitle>
                 </Styled.ListWrapper>
                 <Styled.ListWrapper>
-                  <Styled.Subtitle to=".">Orders</Styled.Subtitle>
+                  <Styled.Subtitle to="orders">Orders</Styled.Subtitle>
                 </Styled.ListWrapper>
                 <Styled.ListWrapper>
-                  <Styled.Subtitle to=".">Ledger</Styled.Subtitle>
+                  <Styled.Subtitle to="ledger">Ledger</Styled.Subtitle>
                 </Styled.ListWrapper>
               </Styled.ListContainer>
             </Styled.CollapsibleCustomer>
           </Styled.ListItem>
           <Styled.ListItem>
             <Styled.DashboardContainer onClick={clickHandler} id="inventory">
-              <Styled.Title to=".">
+              <Styled.Title to="#">
                 <Styled.DashboardDivider>
                   <MdInventory />
                   Inventory
@@ -124,20 +121,20 @@ export default function Sidebar() {
             >
               <Styled.ListContainer>
                 <Styled.ListWrapper>
-                  <Styled.Subtitle to=".">Suppliers</Styled.Subtitle>
+                  <Styled.Subtitle to="suppliers">Suppliers</Styled.Subtitle>
                 </Styled.ListWrapper>
                 <Styled.ListWrapper>
-                  <Styled.Subtitle to=".">Products</Styled.Subtitle>
+                  <Styled.Subtitle to="products">Products</Styled.Subtitle>
                 </Styled.ListWrapper>
                 <Styled.ListWrapper>
-                  <Styled.Subtitle to=".">Print Logs</Styled.Subtitle>
+                  <Styled.Subtitle to="print-logs">Print Logs</Styled.Subtitle>
                 </Styled.ListWrapper>
               </Styled.ListContainer>
             </Styled.CollapsibleInventory>
           </Styled.ListItem>
           <Styled.ListItem>
             <Styled.DashboardContainer onClick={clickHandler} id="resources">
-              <Styled.Title to=".">
+              <Styled.Title to="#">
                 <Styled.DashboardDivider>
                   <IoDocuments />
                   Resources
@@ -156,13 +153,15 @@ export default function Sidebar() {
             >
               <Styled.ListContainer>
                 <Styled.ListWrapper>
-                  <Styled.Subtitle to=".">Terms of Service</Styled.Subtitle>
+                  <Styled.Subtitle to="terms-of-service">
+                    Terms of Service
+                  </Styled.Subtitle>
                 </Styled.ListWrapper>
                 <Styled.ListWrapper>
-                  <Styled.Subtitle to=".">Warranty</Styled.Subtitle>
+                  <Styled.Subtitle to="warranty">Warranty</Styled.Subtitle>
                 </Styled.ListWrapper>
                 <Styled.ListWrapper>
-                  <Styled.Subtitle to=".">Documents</Styled.Subtitle>
+                  <Styled.Subtitle to="Documents">Documents</Styled.Subtitle>
                 </Styled.ListWrapper>
               </Styled.ListContainer>
             </Styled.CollapsibleResources>

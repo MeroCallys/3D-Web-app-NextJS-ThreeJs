@@ -19,7 +19,7 @@ function DashboardLayout() {
       <MainContainer>
         <Sidebar />
         <Container>
-          <Title>Welcome to Dashboard</Title>
+          <Title>Welcome to Dashboard from Dashboard Layout</Title>
           <Outlet />
         </Container>
       </MainContainer>

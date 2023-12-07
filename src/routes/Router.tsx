@@ -22,6 +22,13 @@ import ProfileDetail, {
 import Details from "../pages/dashboard/Details";
 import Pricing from "../pages/dashboard/Pricing";
 import OrderHistory from "../pages/dashboard/OrderHistory";
+import Analytics from "../pages/dashboard/DashboardAnalytics";
+import Suppliers from "../pages/dashboard/Suppliers";
+import Products from "../pages/dashboard/Products";
+import PrintLogs from "../pages/dashboard/PrintLogs";
+import TermsOfService from "../pages/dashboard/TermsOfService";
+import Warranty from "../pages/dashboard/Warranty";
+import Documents from "../pages/dashboard/Documents";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -34,7 +41,7 @@ export const router = createBrowserRouter(
       </Route>
       <Route path="dashboard" element={<DashboardLayout />}>
         <Route index element={<DashboardOverview />} />
-        <Route path="ledgers" element={<DashboardLedger />} />
+        <Route path="analytics" element={<Analytics />} />
         <Route path="profiles" element={<Profiles />} loader={profilesLoader} />
         <Route
           path="/dashboard/profiles/:id"
@@ -43,9 +50,17 @@ export const router = createBrowserRouter(
         >
           <Route index element={<Details />} />
           <Route path="pricing" element={<Pricing />} />
-          <Route path="orders" element={<OrderHistory />} />
+          <Route path="orders-history" element={<OrderHistory />} />
         </Route>
         <Route path="orders" element={<DashboardOrders />} />
+        <Route path="ledger" element={<DashboardLedger />} />
+        <Route path="suppliers" element={<Suppliers />} />
+        <Route path="products" element={<Products />} />
+        <Route path="print-logs" element={<PrintLogs />} />
+        <Route path="terms-of-service" element={<TermsOfService />} />
+        <Route path="warranty" element={<Warranty />} />
+        <Route path="documents" element={<Documents />} />
+        {/* PROFILE DETAILS NESTED ROUTE */}
       </Route>
     </>
   )

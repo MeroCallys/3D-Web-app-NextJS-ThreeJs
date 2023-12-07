@@ -56,7 +56,7 @@ function ProfileDetail() {
       <Nav>
         <NavLinkSC to=".">Details</NavLinkSC>
         <NavLinkSC to="pricing">Pricing</NavLinkSC>
-        <NavLinkSC to="orders">Order History</NavLinkSC>
+        <NavLinkSC to="orders-history">Order History</NavLinkSC>
       </Nav>
       <Section>
         <Outlet />

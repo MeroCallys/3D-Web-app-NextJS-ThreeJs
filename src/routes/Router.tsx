@@ -8,21 +8,21 @@ import Home from "../pages/home/Home";
 import Login from "../pages/login/Login";
 import Signup from "../pages/signup/Signup";
 import DashboardLayout from "../layout/DashboardLayout";
-import DashboardLedger from "../pages/dashboard/DashboardLedger";
+import DashboardLedger from "../pages/dashboard/Ledger";
 import Inventory from "../pages/Inventory/Inventory";
 import Error from "../components/Error";
-import DashboardOverview from "../pages/dashboard/DashboardOverview";
+import DashboardOverview from "../pages/dashboard/Overview";
 import Profiles, {
   loader as profilesLoader,
 } from "../pages/dashboard/Profiles";
-import DashboardOrders from "../pages/dashboard/DashboardOrders";
+import DashboardOrders from "../pages/dashboard/Orders";
 import ProfileDetail, {
   loader as profileLoader,
 } from "../pages/dashboard/ProfileDetail";
 import Details from "../pages/dashboard/Details";
 import Pricing from "../pages/dashboard/Pricing";
 import OrderHistory from "../pages/dashboard/OrderHistory";
-import Analytics from "../pages/dashboard/DashboardAnalytics";
+import Analytics from "../pages/dashboard/Analytics";
 import Suppliers from "../pages/dashboard/Suppliers";
 import Products from "../pages/dashboard/Products";
 import PrintLogs from "../pages/dashboard/PrintLogs";

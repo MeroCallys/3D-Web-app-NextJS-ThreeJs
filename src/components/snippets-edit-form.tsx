@@ -8,10 +8,10 @@ interface SnippetEditFormProps {
 }
 
 export default function SnippetEditForm({ snippet }: SnippetEditFormProps) {
-  // function handleEditorChange = (value: String = "") => {
-  //   console.log()
-  // }
-  console.log(snippet);
+  const handleEditorChange = (value: String = "") => {
+    console.log(value);
+  };
+
   return (
     <div className="flex flex-col gap-4 my-5">
       <h2 className="font-bold text-gray-600">{snippet.title}</h2>
@@ -19,13 +19,13 @@ export default function SnippetEditForm({ snippet }: SnippetEditFormProps) {
         height="40vh"
         theme="vs-dark"
         language="javascript"
-        defaultValue={snippet.code}
+        defaultValue={`${snippet.code}`}
         options={{
           minimap: {
             enabled: false,
           },
         }}
-        // onChange={handleEditorChange}
+        onChange={handleEditorChange}
       />
       <button className="border p-2 rounded bg-blue-200">Save</button>
     </div>

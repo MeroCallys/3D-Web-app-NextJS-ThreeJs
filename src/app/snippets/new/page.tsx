@@ -5,20 +5,15 @@ export default function SnippetCreatePage() {
   async function createSnippet(formData: FormData) {
     "use server";
 
-    //check user input
     const title = formData.get("title") as string;
     const code = formData.get("code") as string;
-
-    //create user input
-    const snippet = await db.snippet.create({
+    await db.snippet.create({
       data: {
         title,
         code,
       },
     });
 
-    console.log(snippet);
-    //redirect user to snippets page
     redirect("/");
   }
 

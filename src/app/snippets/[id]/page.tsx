@@ -1,6 +1,6 @@
-import { db } from "@/db";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import * as actions from "@/actions";
+import { useRouter } from "next/router";
 
 interface SnippetShowPageProps {
   params: {
@@ -9,18 +9,12 @@ interface SnippetShowPageProps {
 }
 
 export default async function SnippetPage(props: SnippetShowPageProps) {
-  // await new Promise((r) => setTimeout(r, 500));
-
-  const snippet = await db.snippet.findFirst({
-    where: {
-      id: parseInt(props.params.id),
-    },
-  });
-
-  if (!snippet) return notFound();
+  const snippet = await actions.fetchSnippet(parseInt(props.params.id));
+  const deleteSnippetAction = actions.deleteSnippet.bind(null, snippet.id);
 
   return (
     <div className="flex flex-col gap-3 p-5">
+      <Link href="..">&#8592; back to the snippets</Link>
       <div className="flex justify-between items-center">
         <div>
           <h3 className="font-bold text-lg">{snippet?.title}</h3>
@@ -32,12 +26,12 @@ export default async function SnippetPage(props: SnippetShowPageProps) {
           >
             Edit
           </Link>
-          <Link
-            href={`${props.params.id}/delete`}
-            className="p-2 border rounded hover:bg-red-200"
-          >
-            Delete
-          </Link>
+
+          <form action={deleteSnippetAction}>
+            <button className="p-2 border rounded hover:bg-red-200">
+              Delete
+            </button>
+          </form>
         </div>
       </div>
       <div className="bg-slate-200 rounded p-2 min-h-48">

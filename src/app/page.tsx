@@ -1,5 +1,14 @@
-import React from "react";
+"use client";
+
+import { Canvas } from "@react-three/fiber";
+import Torus from "./Torus";
 
 export default function Home() {
-  return <div>Home</div>;
+  return (
+    <div className="w-screen h-screen">
+      <Canvas>
+        <Torus />
+      </Canvas>
+    </div>
+  );
 }

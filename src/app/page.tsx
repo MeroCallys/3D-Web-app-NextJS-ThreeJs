@@ -6,7 +6,14 @@ import Torus from "./Torus";
 export default function Home() {
   return (
     <div className="w-screen h-screen">
-      <Canvas>
+      <Canvas
+        camera={{
+          fov: 100,
+          near: 0.1,
+          far: 200,
+          position: [0, 0, 10],
+        }}
+      >
         <Torus />
       </Canvas>
     </div>

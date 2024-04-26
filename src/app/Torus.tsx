@@ -2,37 +2,43 @@
 
 
 
-import { DirectionalLight, Group, InstancedMesh, Mesh } from "three";
-import { extend, useFrame, useThree } from "@react-three/fiber";
-import React, { useState, useRef, useEffect } from "react";
-import { Stats, OrbitControls, PointerLockControls } from "@react-three/drei";
+import { Group, Mesh } from "three";
+import { useFrame, useThree } from "@react-three/fiber";
+import React, { useState, useRef } from "react";
 import CustomObject from "./CustomObject";
+import { OrbitControls } from "@react-three/drei";
 
 export default function Torus() {
-  const { camera, gl } = useThree();
+  const { camera } = useThree();
 
-  const [rotate, setRotation] = useState(0);
+  // useFrame((state, delta) => {
+  //   const angle = state.clock.elapsedTime;
+
+  //   state.camera.position.y = Math.cos(angle) * Math.tan(angle) * 2;
+
+  //   camera.lookAt(0, 0, 0);
+  // });
+
   const cubeRef = useRef<Mesh>(null!);
   const [hovered, setHovered] = useState(true);
   const groupRef = useRef<Group>(null!);
-  useFrame((state, delta) => {
-    const elapsedTime = state.clock.getElapsedTime();
-    groupRef.current.position.z = Math.random() * elapsedTime * 2; // Make the cube float up and down
-    groupRef.current.position.x = Math.sin(elapsedTime) * 2; // Make the cube float up and down
-    groupRef.current.position.z = Math.sin(elapsedTime) * 2; // Make the cube float up and down
-    groupRef.current.rotation.x = elapsedTime; // Rotate the cube around the X-axis
-    groupRef.current.rotation.y = elapsedTime; // Rotate the cube around the Y-axis
-    groupRef.current.rotation.z = elapsedTime; // Rotate the cube around the Y-axis
-  });
+  // useFrame((state, delta) => {
+  //   const elapsedTime = state.clock.getElapsedTime();
+  //   groupRef.current.position.z = Math.random() * elapsedTime * 2; // Make the cube float up and down
+  //   groupRef.current.position.x = Math.sin(elapsedTime) * 2; // Make the cube float up and down
+  //   groupRef.current.position.z = Math.sin(elapsedTime) * 2; // Make the cube float up and down
+  //   groupRef.current.rotation.x = elapsedTime; // Rotate the cube around the X-axis
+  //   groupRef.current.rotation.y = elapsedTime; // Rotate the cube around the Y-axis
+  //   groupRef.current.rotation.z = elapsedTime; // Rotate the cube around the Y-axis
+  // });
 
   return (
     <>
-      {/* <PointerLockControls /> */}
       <OrbitControls />
-      <Stats />
+
       <ambientLight intensity={1.5} position={[-1, -2, -3]} />
       <directionalLight intensity={4.5} position={[1, 2, 3]} />
-      <CustomObject />
+      {/* <CustomObject /> */}
       <group ref={groupRef}>
         <mesh
           ref={cubeRef}
@@ -62,7 +68,7 @@ export default function Torus() {
 
         <mesh scale={0.5}>
           <coneGeometry />
-          <meshStandardMaterial color={"yellow"} />
+          <meshStandardMaterial color={"gray"} />
         </mesh>
 
         <mesh scale={0.5} position-x={-5}>

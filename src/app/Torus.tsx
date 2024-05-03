@@ -6,11 +6,10 @@ import { Group, Mesh } from "three";
 import { useFrame, useThree } from "@react-three/fiber";
 import React, { useState, useRef } from "react";
 import CustomObject from "./CustomObject";
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, AccumulativeShadows } from "@react-three/drei";
 
 export default function Torus() {
   const { camera } = useThree();
-
   // useFrame((state, delta) => {
   //   const angle = state.clock.elapsedTime;
 

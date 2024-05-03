@@ -6,9 +6,31 @@ import Torus from "./Torus";
 import { useCameraContext } from "./CameraContextProvider";
 import Controls from "./Controls";
 
-import * as THREE from "three";
+
+
 export default function Home() {
-  const cameraContext = useCameraContext();
+  const boxes = [
+    {
+      value: 1,
+      getValue() {
+        return this.value;
+      },
+    },
+    {
+      value: 2,
+      getValue() {
+        return this.value;
+      },
+    },
+    {
+      value: 3,
+      getValue() {
+        return this.value;
+      },
+    },
+  ];
+
+  console.log(boxes.map((e) => e.getValue()));
 
   return (
     <div className="w-screen h-screen relative">

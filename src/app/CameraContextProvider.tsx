@@ -48,6 +48,8 @@ export default function CameraContextProvider({
     }
   };
 
+  const message = "Hello World";
+
   const value = useMemo(
     () => ({
       fov: state.fov,
@@ -55,6 +57,7 @@ export default function CameraContextProvider({
       far: state.far,
       position: state.position,
       setCamera,
+      message,
     }),
     [state]
   );
